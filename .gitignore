@@ -1,5 +1,7 @@
 *.la
 *.o
+.idea
+cmake-build-debug
 *.lo
 .cproject
 .project
