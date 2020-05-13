@@ -8,8 +8,11 @@ include_directories(lib)
 include_directories(plugins/proxy)
 include_directories(src)
 
+include_directories(/usr/local/glibc-2.42.0/include/glib-2.0)
+include_directories(/usr/local/glibc-2.42.0/lib/glib-2.0/include)
+include_directories(/usr/local/mysql/include)
 
-add_executable(DBProxy
+set(SOURCE_FILES
         lib/chassis.c
         lib/crc32-lua.c
         lib/crc32.c
@@ -86,7 +89,6 @@ add_executable(DBProxy
         src/lua-scope.c
         src/lua-scope.h
         src/my_rdtsc.c
-        src/my_rdtsc.h
         src/mysql-binlog-dump.c
         src/mysql-myisam-dump.c
         src/mysql-proxy-cli.c
@@ -136,3 +138,10 @@ add_executable(DBProxy
         src/sys-pedantic.h
         src/test-latency.c
         config.h)
+
+set(CMAKE_VERBOSE_MAKEFILE 1)
+add_custom_target(build COMMAND make && sudo make install WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
+
+add_custom_target(resetold COMMAND make clean WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
+
+
