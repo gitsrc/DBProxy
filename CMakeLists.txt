@@ -8,9 +8,9 @@ include_directories(lib)
 include_directories(plugins/proxy)
 include_directories(src)
 
-include_directories(/usr/local/glibc-2.42.0/include/glib-2.0)
-include_directories(/usr/local/glibc-2.42.0/lib/glib-2.0/include)
-include_directories(/usr/local/mysql/include)
+include_directories(/usr/local/glibc-2.42.0/include/glib-2.0) #修改为glic路径
+include_directories(/usr/local/glibc-2.42.0/lib/glib-2.0/include) #修改为glib-2.0对应的目录
+include_directories(/usr/local/mysql/include) #修改为mysql对应的目录
 
 set(SOURCE_FILES
         lib/chassis.c
