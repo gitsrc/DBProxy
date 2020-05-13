@@ -44,3 +44,6 @@ plugins/proxy/Makefile
 plugins/replicant/Makefile
 script/Makefile
 src/Makefile
+.vscode/c_cpp_properties.json
+.vscode/settings.json
+config.h.in~
