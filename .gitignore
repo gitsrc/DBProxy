@@ -1,6 +1,8 @@
 *.la
 *.o
 .idea
+build
+glibc
 cmake-build-debug
 *.lo
 .cproject

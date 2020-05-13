@@ -5,7 +5,7 @@
 >### CentOS
 
 ```
-yum install -y Percona-Server-devel-55.x86_64 Percona-Server-client-55.x86_64 Percona-Server-shared-55 jemalloc jemalloc-devel libevent libevent-devel openssl openssl-devel lua lua-devel bison flex libtool.x86_64
+yum install -y Percona-Server-devel-55.x86_64 Percona-Server-client-55.x86_64 Percona-Server-shared-55 jemalloc jemalloc-devel libevent libevent-devel openssl openssl-devel lua lua-devel bison flex libtool.x86_64 libffi-devel
 ```
 
 >### Ubuntu & Debian
@@ -19,7 +19,7 @@ apt-get install libmysqlclient-dev libgcrypt11-dev  pkg-config lua5.1-0 liblua5.
 ```
 cd glib-2.42.0
 autoreconf -ivf
-./configure
+./configure --with-libiconv=gnu
 make && make install
 ```
 
